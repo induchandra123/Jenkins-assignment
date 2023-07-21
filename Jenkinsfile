@@ -14,7 +14,7 @@ pipeline {
 		
 		stage ('deploy main branch on master') {
 			steps {
-				sh 'yum install httpd -y'
+				sh 'sudo yum install httpd -y'
 				sh 'service httpd start'
 				sh 'cp -r /mnt/jenkins-assignment1/index.html /var/www/html'
 				sh 'chmod -R 777 /var/www/html'
@@ -29,7 +29,7 @@ pipeline {
 				}
 			}
 			steps {
-				sh 'yum install httpd -y'
+				sh 'sudo yum install httpd -y'
 				sh 'service httpd start'
 				sh 'cp -r /mnt/jenkins-assignment1/index.html /var/www/html'
 				sh 'chmod -R 777 /var/www/html'
