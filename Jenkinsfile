@@ -1,7 +1,4 @@
 pipeline {
-    when {
-            branch 'main/*'
-        }
 	agent {
 		label {
 			label 'master'
@@ -25,9 +22,7 @@ pipeline {
 		}
 		
 		stage ('deploy 23q1 branch on slave-1') {
-		    when {
-                branch '23q1/*'
-            }
+		  
 			agent {
 				label {
 					label 'slave1'
